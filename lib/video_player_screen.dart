@@ -60,7 +60,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   }
   Timer? _controlVisibilityTimer;
   void _resetControlVisibilityTimer() {
-    _controlVisibilityTimer?.cancel(); // Cancel any existing timer
+    _controlVisibilityTimer?.cancel();
     _controlVisibilityTimer = Timer(const Duration(seconds: 4), () {
       if (mounted) {
         setState(() {
@@ -210,12 +210,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                                   child: GestureDetector(
                                     onTap: () {
                                       _toggleControls();
-                                    //  Future.delayed(const Duration(milliseconds: 3000)).whenComplete(() => _toggleControls(),);
                                     },
                                     onDoubleTap: () {
                                       _skipForward();
                                       _toggleControls();
-                                  //    Future.delayed(const Duration(seconds: 2)).whenComplete(() => _toggleControls(),);
                                       print("here skip hidden ");
                                     },
                                   ),
